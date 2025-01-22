@@ -56,7 +56,7 @@ def hash_args(*args, precision=HASH_PREC):
 
 def log(logger, msg, level=logging.DEBUG):
     if logger is not None:
-        logger.log(level, msg)
+        logger.log(level, msg.encode('utf-8'))
 
 
 def sort_by_central(set1, set2):
@@ -203,7 +203,7 @@ def file_or_str(*args, method=False, mode="r", exact=False):
                 (p.suffix in exts) or (exact and p.name in exts)
             )
             if looks_like_file and p.is_file():
-                with open(p, mode=mode) as handle:
+                with open(p, mode=mode, encoding='utf-8') as handle:
                     inp = handle.read()
             elif looks_like_file and not p.exists():
                 raise FileNotFoundError(

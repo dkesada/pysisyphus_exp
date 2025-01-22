@@ -364,7 +364,7 @@ class XTB(Calculator):
         return opt_result
 
     def parse_energy(self, path):
-        with open(path / self.out_fn) as handle:
+        with open(path / self.out_fn, encoding='utf-8') as handle:
             text = handle.read()
         energy_re = r"TOTAL ENERGY\s*([-\d\.]+) Eh"
         energy = float(re.search(energy_re, text)[1])
