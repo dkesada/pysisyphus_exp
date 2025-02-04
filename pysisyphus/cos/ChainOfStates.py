@@ -95,7 +95,7 @@ class ChainOfStates:
         return calc
 
     def log(self, message):
-        self.logger.debug(f"Counter {self.counter+1:03d}, {message}")
+        self.logger.debug(f"Counter {self.counter+1:03d}, {message}".encode('utf-8'))
 
     def get_fixed_indices(self):
         fixed = list()

@@ -305,7 +305,7 @@ class GrowingString(GrowingChainOfStates):
             self.log(f"Reparametrizing node {i}")
             for j in range(self.max_micro_cycles):
                 diff = (desired_param_density - cur_param_density)[i]
-                self.log(f"\t{j}: Δ={diff: .6f}")
+                self.log(f"\t{j}: Δ={diff: .6f}".encode('utf-8'))
                 # Do at least one pass
                 if (j > 0) and (abs(diff) < thresh):
                     break

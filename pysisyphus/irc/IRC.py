@@ -215,7 +215,7 @@ class IRC:
 
     def log(self, msg):
         # self.logger.debug(f"step {self.cur_cycle:03d}, {msg}")
-        self.logger.debug(msg)
+        self.logger.debug(msg.decode('utf-8'))
 
     @property
     def m_sqrt(self):
