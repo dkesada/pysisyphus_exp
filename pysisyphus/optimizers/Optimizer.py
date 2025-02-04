@@ -461,7 +461,7 @@ class Optimizer(metaclass=abc.ABCMeta):
         )
 
     def log(self, message, level=50):
-        self.logger.log(level, message)
+        self.logger.log(level, message.encode('utf-8'))
 
     def check_convergence(self, step=None, multiple=1.0, overachieve_factor=None):
         """Check if the current convergence of the optimization
