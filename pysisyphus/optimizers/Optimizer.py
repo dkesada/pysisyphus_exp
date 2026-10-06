@@ -544,7 +544,7 @@ class Optimizer(metaclass=abc.ABCMeta):
         This method should only be used in the Optimizer baseclass (this module).
         Optimizers inheriting from this class should use Optimizer.log() instead.
         """
-        self.logger.log(self.logging_level, message)
+        self.logger.log(self.logging_level, message.encode('utf-8'))
 
     def check_convergence(self, step=None, multiple=1.0, overachieve_factor=None):
         """Check if the current convergence of the optimization

@@ -172,7 +172,7 @@ class TablePrinter:
         if level is None:
             level = self.level
         if self.logger:
-            self.logger.log(level, msg)
+            self.logger.log(level, msg.encode('utf-8'))
         else:
             print(msg)
 
