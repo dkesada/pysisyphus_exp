@@ -290,7 +290,7 @@ class ChainOfStates:
         return ia2d
 
     def log(self, message):
-        self.logger.debug(message.encode('utf-8'))
+        self.logger.debug(message)
 
     def get_fixed_indices(self):
         fixed = list()
